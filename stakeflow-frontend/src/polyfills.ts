@@ -1,17 +1,17 @@
 // Browser polyfills for Node built-ins used by web3.js / spl-token
-import { Buffer } from 'buffer'
-import process from 'process'
+import { Buffer as NodeBuffer } from 'buffer'
+import processModule from 'process'
 
-declare global {
-  var Buffer: typeof Buffer
-  var process: typeof process
-}
+// Avoid declaring global vars with self-referential types to prevent TS2502.
 
-if (typeof globalThis.Buffer === 'undefined') {
-  globalThis.Buffer = Buffer
-}
-if (typeof globalThis.process === 'undefined') {
-  globalThis.process = process
+{
+  const g = globalThis as unknown as { Buffer?: typeof NodeBuffer; process?: typeof processModule }
+  if (typeof g.Buffer === 'undefined') {
+    g.Buffer = NodeBuffer
+  }
+  if (typeof g.process === 'undefined') {
+    g.process = processModule
+  }
 }
 
 // Ensure TextEncoder/TextDecoder exist without CommonJS require
