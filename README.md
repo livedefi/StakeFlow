@@ -34,32 +34,32 @@ This README consolidates backend and frontend docs, provides quick setup, and li
 ## Flow Overview
 
 ```mermaid
-flowchart TD
-  U[User Wallet (Phantom/Solflare)] --> F[Frontend (React + Wallet Adapter)]
-  F --> P[Anchor Program (stake-flow)]
-  P --> D[PDAs: config, stake_vault, penalty_vault, reward_mint_authority]
+graph TD;
+  U[User Wallet (Phantom/Solflare)] --> F[Frontend (React + Wallet Adapter)];
+  F --> P[Anchor Program (stake-flow)];
+  P --> D[PDAs: config, stake_vault, penalty_vault, reward_mint_authority];
 
   subgraph Staking
-    F -->|stake(amount)| P
-    P -->|transfer stake to vault| SV[Stake Vault (SPL Token Account)]
-    P -->|record position| USP[User Stake PDA]
+    F -->|stake(amount)| P;
+    P -->|transfer stake to vault| SV[Stake Vault (SPL Token Account)];
+    P -->|record position| USP[User Stake PDA];
   end
 
   subgraph Rewards
-    P -->|accrue over time (APR)| USP
-    F -->|claim| P
-    P -->|mint reward to user| UR[User Reward ATA]
+    P -->|accrue over time (APR)| USP;
+    F -->|claim| P;
+    P -->|mint reward to user| UR[User Reward ATA];
   end
 
   subgraph Unstake
-    F -->|unstake| P
-    P -->|apply lock/penalty policy| USP
-    P -->|transfer back stake| US[User Stake ATA]
+    F -->|unstake| P;
+    P -->|apply lock/penalty policy| USP;
+    P -->|transfer back stake| US[User Stake ATA];
   end
 
   subgraph Events
-    W[Wallet Provider Events] --> L[Frontend listeners]
-    L --> R[Refresh balances & PDAs]
+    W[Wallet Provider Events] --> L[Frontend listeners];
+    L --> R[Refresh balances & PDAs];
   end
 ```
 
