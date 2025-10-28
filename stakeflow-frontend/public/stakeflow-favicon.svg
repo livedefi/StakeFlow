@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="solanaGradientFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9945FF"/>
+      <stop offset="50%" stop-color="#14F195"/>
+      <stop offset="100%" stop-color="#00FFA3"/>
+    </linearGradient>
+  </defs>
+  <!-- Centered diagonal bars only -->
+  <g transform="translate(10,16)" fill="url(#solanaGradientFav)">
+    <rect x="0" y="0" width="44" height="8" rx="4" transform="skewX(-20)"/>
+    <rect x="0" y="12" width="44" height="8" rx="4" transform="skewX(-20)"/>
+    <rect x="0" y="24" width="44" height="8" rx="4" transform="skewX(-20)"/>
+  </g>
+</svg>

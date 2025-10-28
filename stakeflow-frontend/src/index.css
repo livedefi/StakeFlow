@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* StakeFlow Wallet Adapter UI overrides */
+:root {
+  --sf-bg: #0e0f14;
+  --sf-panel: #111318;
+  --sf-border: #1f2330;
+  --sf-text: #e5e7eb;
+  --sf-muted: #9ca3af;
+  --sf-grad-start: #9945FF;
+  --sf-grad-mid: #14F195;
+  --sf-grad-end: #00FFA3;
+}
+
+/* Base button */
+button.wallet-adapter-button {
+  background: linear-gradient(90deg, var(--sf-grad-start), var(--sf-grad-mid), var(--sf-grad-end));
+  color: #0b0c10;
+  border: 1px solid var(--sf-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 1px rgba(153,69,255,0.08), 0 6px 16px rgba(0,0,0,0.25);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+button.wallet-adapter-button:hover:not([disabled]) {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 0 0 1px rgba(153,69,255,0.15), 0 10px 20px rgba(0,0,0,0.35);
+}
+button.wallet-adapter-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(20,241,149,0.8), 0 0 0 4px rgba(0,0,0,0.5);
+}
+button.wallet-adapter-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Trigger (main CTA) */
+/* Removed override to preserve default gradient and contrast */
+
+/* Dropdown */
+.wallet-adapter-dropdown, .wallet-adapter-dropdown-list {
+  background: var(--sf-panel) !important;
+  border: 1px solid var(--sf-border) !important;
+  color: var(--sf-text) !important;
+  box-shadow: 0 0 0 1px rgba(153,69,255,0.08), 0 12px 24px rgba(0,0,0,0.4) !important;
+}
+.wallet-adapter-dropdown-list-item {
+  color: var(--sf-text) !important;
+  background: var(--sf-panel) !important;
+  background-image: none !important;
+}
+.wallet-adapter-dropdown-list-item:hover {
+  background: #141821 !important;
+  border-color: #14F195 !important;
+}
+
+/* Modal (wallet selection) */
+.wallet-adapter-modal, .wallet-adapter-modal-wrapper {
+  background: var(--sf-panel) !important;
+}
+.wallet-adapter-modal-title {
+  color: var(--sf-text) !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.wallet-adapter-modal-button-close {
+  color: var(--sf-muted) !important;
+}
+.wallet-adapter-modal-list {
+  border-top: 1px solid var(--sf-border) !important;
+  border-bottom: 1px solid var(--sf-border) !important;
+}
+.wallet-adapter-modal-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--sf-panel) !important;
+  background-image: none !important; /* force neutral background, no gradient */
+  border: 1px solid var(--sf-border) !important;
+  border-radius: 0.75rem !important;
+  color: var(--sf-text) !important;
+  transition: background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+.wallet-adapter-modal-list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 0.75rem 0 0 0.75rem;
+  background: linear-gradient(180deg, var(--sf-grad-start), var(--sf-grad-mid), var(--sf-grad-end));
+  opacity: 0.9;
+}
+.wallet-adapter-modal-list-item:hover {
+  background: #141821 !important;
+  border-color: #14F195 !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35) !important;
+}
+.wallet-adapter-modal-list-item:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(20,241,149,0.8), 0 0 0 4px rgba(0,0,0,0.5) !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  button.wallet-adapter-button {
+    transition: none;
+  }
+}
