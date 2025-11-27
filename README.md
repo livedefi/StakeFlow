@@ -2,6 +2,11 @@
 
 Live: https://stakeflow.casaislabs.com/
 
+Devnet scanners:
+- Stake Mint: [Solscan](https://solscan.io/token/BeyV4AuCPvchhJc7NXSaAa2ECbPVkj39wy9CY7fu8opD?cluster=devnet) · [Explorer](https://explorer.solana.com/address/BeyV4AuCPvchhJc7NXSaAa2ECbPVkj39wy9CY7fu8opD?cluster=devnet)
+- Reward Mint: [Solscan](https://solscan.io/token/GQCW1M9szh426zC5a51BLZbPhvXoPnMKCeRWepyCziK3?cluster=devnet) · [Explorer](https://explorer.solana.com/address/GQCW1M9szh426zC5a51BLZbPhvXoPnMKCeRWepyCziK3?cluster=devnet)
+ - Program ID: [Solscan](https://solscan.io/address/4cUDbCQvhBSzWbTivv3ZscDkePVweqRFAHbgDUKLkfdK?cluster=devnet) · [Explorer](https://explorer.solana.com/address/4cUDbCQvhBSzWbTivv3ZscDkePVweqRFAHbgDUKLkfdK?cluster=devnet)
+
 Solana staking dApp built with Anchor and React. The project consists of:
 - Backend (on-chain program): [stake-flow README](stake-flow/README.md)
 - Frontend (React + Vite): [stakeflow-frontend README](stakeflow-frontend/README.md)
