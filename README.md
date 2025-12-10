@@ -1,6 +1,5 @@
 # StakeFlow
 
-Live: https://stakeflow.casaislabs.com/
 
 Devnet scanners:
 - Stake Mint: [Solscan](https://solscan.io/token/BeyV4AuCPvchhJc7NXSaAa2ECbPVkj39wy9CY7fu8opD?cluster=devnet) · [Explorer](https://explorer.solana.com/address/BeyV4AuCPvchhJc7NXSaAa2ECbPVkj39wy9CY7fu8opD?cluster=devnet)
