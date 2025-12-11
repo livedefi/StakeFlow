@@ -43,6 +43,7 @@ pub mod stake_flow {
         config.reward_mint_auth_bump = auth_bump;
 
         // Ensure current mint authority is the admin, then assign PDA as new mint authority
+        // reward_mint.mint_authority
         match ctx.accounts.reward_mint.mint_authority {
             COption::Some(current) => {
                 require!(current == ctx.accounts.admin.key(), StakeFlowError::Unauthorized);
